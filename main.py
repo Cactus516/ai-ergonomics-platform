@@ -1,0 +1,1 @@
+print("AI Ergonomics Platform starting...")
