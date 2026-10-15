@@ -13,6 +13,15 @@ while True:
 
     if not ret:
         break
+        cv2.putText(
+    frame,
+    "AI Ergonomics Platform - Camera Active",
+    (10, 30),
+    cv2.FONT_HERSHEY_SIMPLEX,
+    0.6,
+    (0, 255, 0),
+    2
+)
 
     cv2.imshow("AI Ergonomics - Webcam", frame)
 
