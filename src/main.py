@@ -4,6 +4,10 @@ print("AI Ergonomics Platform starting...")
 
 cap = cv2.VideoCapture(0)
 
+if not cap.isOpened():
+    print("Error: Could not open webcam.")
+    exit()
+
 while True:
     ret, frame = cap.read()
 
@@ -17,3 +21,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
