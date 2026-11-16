@@ -43,7 +43,16 @@ while True:
         print("Person detected!")
     else:
         print("No person detected.")
-    
+
+    if pose_result.pose_landmarks:
+        height, width, _ = frame.shape
+
+        for pose in pose_result.pose_landmarks:
+            for landmark in pose:
+                x = int(landmark.x * width)
+                y = int(landmark.y * height)
+
+                cv2.circle(frame, (x, y), 5, (0, 255, 0), -1)
 
     if not ret:
         break
