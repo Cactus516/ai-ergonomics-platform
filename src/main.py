@@ -12,7 +12,10 @@ options = PoseLandmarkerOptions(
         model_asset_path="models/pose_landmarker_full.task"
     ),
     running_mode=VisionRunningMode.VIDEO,
-    num_poses=1
+    num_poses=1,
+    min_pose_detection_confidence=0.6,
+    min_pose_presence_confidence=0.6,
+    min_tracking_confidence=0.6
 )
 
 detector = PoseLandmarker.create_from_options(options)
