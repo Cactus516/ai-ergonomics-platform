@@ -39,7 +39,10 @@ while True:
         mp_image,
         timestamp_ms
     )
-    
+    if pose_result.pose_landmarks:
+        print("Person detected!")
+    else:
+        print("No person detected.")
 
     if not ret:
         break
