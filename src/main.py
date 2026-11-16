@@ -30,6 +30,8 @@ if not cap.isOpened():
 
 while True:
     ret, frame = cap.read()
+    if not ret:
+        break
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     mp_image = mp.Image(
@@ -57,8 +59,7 @@ while True:
 
                 cv2.circle(frame, (x, y), 5, (0, 255, 0), -1)
 
-    if not ret:
-        break
+
 
     cv2.imshow("AI Ergonomics - Webcam", frame)
 
