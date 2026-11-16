@@ -15,6 +15,8 @@ options = PoseLandmarkerOptions(
     num_poses=1
 )
 
+detector = PoseLandmarker.create_from_options(options)
+
 print("AI Ergonomics Platform starting...")
 
 cap = cv2.VideoCapture(0)
