@@ -39,6 +39,7 @@ while True:
         mp_image,
         timestamp_ms
     )
+    
 
     if not ret:
         break
