@@ -27,6 +27,12 @@ if not cap.isOpened():
 
 while True:
     ret, frame = cap.read()
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    mp_image = mp.Image(
+        image_format=mp.ImageFormat.SRGB,
+        data=rgb_frame
+    )
 
     if not ret:
         break
