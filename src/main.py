@@ -7,6 +7,14 @@ PoseLandmarker = mp.tasks.vision.PoseLandmarker
 PoseLandmarkerOptions = mp.tasks.vision.PoseLandmarkerOptions
 VisionRunningMode = mp.tasks.vision.RunningMode
 
+options = PoseLandmarkerOptions(
+    base_options=BaseOptions(
+        model_asset_path="models/pose_landmarker_full.task"
+    ),
+    running_mode=VisionRunningMode.VIDEO,
+    num_poses=1
+)
+
 print("AI Ergonomics Platform starting...")
 
 cap = cv2.VideoCapture(0)
