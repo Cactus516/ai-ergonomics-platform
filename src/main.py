@@ -1,5 +1,6 @@
 import cv2
 
+
 print("AI Ergonomics Platform starting...")
 
 cap = cv2.VideoCapture(0)
