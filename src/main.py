@@ -33,7 +33,7 @@ while True:
         image_format=mp.ImageFormat.SRGB,
         data=rgb_frame
     )
-    timestamp_ms = int(cap.get(cv2.CAP_PROP_POS_MSEC))
+    timestamp_ms = int(time.monotonic() * 1000)
 
     pose_result = detector.detect_for_video(
         mp_image,
