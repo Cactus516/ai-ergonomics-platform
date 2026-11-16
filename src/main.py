@@ -43,6 +43,7 @@ while True:
         print("Person detected!")
     else:
         print("No person detected.")
+    
 
     if not ret:
         break
