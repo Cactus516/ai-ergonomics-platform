@@ -1,5 +1,11 @@
 import cv2
 
+import mediapipe as mp
+
+BaseOptions = mp.tasks.BaseOptions
+PoseLandmarker = mp.tasks.vision.PoseLandmarker
+PoseLandmarkerOptions = mp.tasks.vision.PoseLandmarkerOptions
+VisionRunningMode = mp.tasks.vision.RunningMode
 
 print("AI Ergonomics Platform starting...")
 
