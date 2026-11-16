@@ -1,7 +1,7 @@
 import time
 import cv2
 import mediapipe as mp
-
+from mediapipe.tasks.python.vision import drawing_utils
 BaseOptions = mp.tasks.BaseOptions
 PoseLandmarker = mp.tasks.vision.PoseLandmarker
 PoseLandmarkerOptions = mp.tasks.vision.PoseLandmarkerOptions
