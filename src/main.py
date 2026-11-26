@@ -92,7 +92,20 @@ while True:
             right_shoulder = smoothed[RIGHT_SHOULDER]
             left_hip = smoothed[LEFT_HIP]
             right_hip = smoothed[RIGHT_HIP]
-            
+
+            # Highlight important landmarks
+            important_landmarks = [
+                left_shoulder,
+                right_shoulder,
+                left_hip,
+                right_hip
+            ]
+
+            for x, y in important_landmarks:
+                pixel_x = int(x * width)
+                pixel_y = int(y * height)
+
+                cv2.circle(frame, (pixel_x, pixel_y), 8, (0, 0, 255), -1)
 
         for connection in POSE_CONNECTIONS:
             start_idx = connection.start
