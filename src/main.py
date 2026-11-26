@@ -45,8 +45,9 @@ cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Error: Could not open webcam.")
     exit()
-    
+
 previous_landmarks = None
+
 while True:
     ret, frame = cap.read()
     if not ret:
