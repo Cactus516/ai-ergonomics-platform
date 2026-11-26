@@ -73,11 +73,15 @@ while True:
         height, width, _ = frame.shape
 
         for pose in pose_result.pose_landmarks:
-            for landmark in pose:
-                x = int(landmark.x * width)
-                y = int(landmark.y * height)
+            smoothed = smooth_landmarks(pose, previous_landmarks)
 
-                cv2.circle(frame, (x, y), 5, (0, 255, 0), -1)
+            previous_landmarks = smoothed
+
+            for x, y in smoothed:
+                pixel_x = int(x * width)
+                pixel_y = int(y * height)
+
+                cv2.circle(frame, (pixel_x, pixel_y), 5, (0, 255, 0), -1)
 
 
 
