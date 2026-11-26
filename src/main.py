@@ -78,11 +78,25 @@ while True:
 
             previous_landmarks = smoothed
 
-            for x, y in smoothed:
-                pixel_x = int(x * width)
-                pixel_y = int(y * height)
+            # Draw connections
+for connection in POSE_CONNECTIONS:
+    start_idx = connection.start
+    end_idx = connection.end
 
-                cv2.circle(frame, (pixel_x, pixel_y), 5, (0, 255, 0), -1)
+    start_point = smoothed[start_idx]
+    end_point = smoothed[end_idx]
+
+    start_pos = (int(start_point[0] * width), int(start_point[1] * height))
+    end_pos = (int(end_point[0] * width), int(end_point[1] * height))
+
+    cv2.line(frame, start_pos, end_pos, (0, 255, 0), 2)
+
+# Draw landmarks
+for x, y in smoothed:
+    pixel_x = int(x * width)
+    pixel_y = int(y * height)
+
+    cv2.circle(frame, (pixel_x, pixel_y), 5, (0, 255, 0), -1)
 
 
 
