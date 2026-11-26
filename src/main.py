@@ -92,6 +92,7 @@ while True:
             right_shoulder = smoothed[RIGHT_SHOULDER]
             left_hip = smoothed[LEFT_HIP]
             right_hip = smoothed[RIGHT_HIP]
+            
 
         for connection in POSE_CONNECTIONS:
             start_idx = connection.start
