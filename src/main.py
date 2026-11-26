@@ -93,14 +93,14 @@ while True:
 
             shoulder_difference = abs(left_shoulder[1] - right_shoulder[1])
             cv2.putText(
-    frame,
-    f"Shoulder Difference: {shoulder_difference:.4f}",
-    (20, 40),
-    cv2.FONT_HERSHEY_SIMPLEX,
-    0.7,
-    (255, 255, 255),
-    2
-)
+            frame,
+            f"Shoulder Difference: {shoulder_difference:.4f}",
+            (20, 40),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (255, 255, 255),
+            2
+        )
             left_hip = smoothed[LEFT_HIP]
             right_hip = smoothed[RIGHT_HIP]
 
