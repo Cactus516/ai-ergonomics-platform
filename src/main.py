@@ -88,10 +88,8 @@ while True:
             nose = smoothed[NOSE]
             left_ear = smoothed[LEFT_EAR]
             right_ear = smoothed[RIGHT_EAR]
-
             left_shoulder = smoothed[LEFT_SHOULDER]
             right_shoulder = smoothed[RIGHT_SHOULDER]
-
             left_hip = smoothed[LEFT_HIP]
             right_hip = smoothed[RIGHT_HIP]
 
