@@ -4,7 +4,6 @@ import mediapipe as mp
 from mediapipe.tasks.python.vision import drawing_utils
 POSE_CONNECTIONS = mp.tasks.vision.PoseLandmarksConnections.POSE_LANDMARKS
 
-# Important pose landmark indices
 NOSE = 0
 LEFT_EAR = 7
 RIGHT_EAR = 8
