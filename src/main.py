@@ -85,6 +85,15 @@ while True:
             smoothed = smooth_landmarks(pose, previous_landmarks)
 
             previous_landmarks = smoothed
+            nose = smoothed[NOSE]
+            left_ear = smoothed[LEFT_EAR]
+            right_ear = smoothed[RIGHT_EAR]
+
+            left_shoulder = smoothed[LEFT_SHOULDER]
+            right_shoulder = smoothed[RIGHT_SHOULDER]
+
+            left_hip = smoothed[LEFT_HIP]
+            right_hip = smoothed[RIGHT_HIP]
 
         for connection in POSE_CONNECTIONS:
             start_idx = connection.start
