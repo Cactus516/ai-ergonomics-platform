@@ -90,10 +90,12 @@ while True:
             right_ear = smoothed[RIGHT_EAR]
             left_shoulder = smoothed[LEFT_SHOULDER]
             right_shoulder = smoothed[RIGHT_SHOULDER]
+
+            shoulder_difference = abs(left_shoulder[1] - right_shoulder[1])
+            
             left_hip = smoothed[LEFT_HIP]
             right_hip = smoothed[RIGHT_HIP]
 
-            # Highlight important landmarks
             important_landmarks = [
                 left_shoulder,
                 right_shoulder,
