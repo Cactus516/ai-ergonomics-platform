@@ -22,6 +22,22 @@ options = PoseLandmarkerOptions(
 
 detector = PoseLandmarker.create_from_options(options)
 
+def smooth_landmarks(current_landmarks, previous_landmarks, alpha=0.2):
+    smoothed_landmarks = []
+
+    for i, landmark in enumerate(current_landmarks):
+        if previous_landmarks is None:
+            smoothed_landmarks.append(landmark)
+        else:
+            previous = previous_landmarks[i]
+
+            x = alpha * landmark.x + (1 - alpha) * previous.x
+            y = alpha * landmark.y + (1 - alpha) * previous.y
+
+            smoothed_landmarks.append((x, y))
+
+    return smoothed_landmarks
+
 print("AI Ergonomics Platform starting...")
 
 cap = cv2.VideoCapture(0)
